@@ -63,8 +63,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          context: ./
-          file: ./docker/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
           labels: |
